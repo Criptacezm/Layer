@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer - Professional Task Management</title>
+  <meta name="description" content="An all-in-one task management platform with intelligent scheduling, focus modes, whiteboard diagrams, and team collaboration tools.">
+  <meta name="author" content="Layer Inc.">
+  
+  <meta property="og:title" content="Layer - Professional Task Management">
+  <meta property="og:description" content="An all-in-one task management platform with intelligent scheduling, focus modes, whiteboard diagrams, and team collaboration tools.">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Layer - Professional Task Management">
+  
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'&gt;&lt;path d='M4 4h16v16H4V4z' fill='url(%23g)' opacity='0.2'/&gt;&lt;path d='M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z' fill='url(%23g)'/&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='4' y1='4' x2='20' y2='20' gradientUnits='userSpaceOnUse'&gt;&lt;stop stop-color='%235e6ad2'/&gt;&lt;stop offset='1' stop-color='%238b5cf6'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;/svg&gt;" type="image/svg+xml">  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Grid -->
+  <div class="background-grid"></div>
+  <div class="background-glow"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16v16H4V4z" fill="url(#logo-gradient)" opacity="0.2"/>
+          <path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z" fill="url(#logo-gradient)"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#5e6ad2"/>
+              <stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Layer
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://layer-tool.vercel.app/" class="btn btn-primary">Get Started Free</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobile-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Now Live — 100% Free</span>
+      </div>
+      <h1 class="hero-title">
+        Task management,<br>
+        <span class="gradient-text">reimagined.</span>
+      </h1>
+      <p class="hero-subtitle">
+        An all-in-one platform with smart scheduling, focus modes, whiteboard diagrams, and seamless team collaboration. Completely free to use — no hidden fees, no credit card required.
+      </p>
+      <div class="hero-buttons">
+          <a href="https://layer-tool.vercel.app/" class="btn btn-primary btn-lg">
+            Get Started Free
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        <button class="btn btn-secondary btn-lg" onclick="openVideoModal()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Watch Demo
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Forever</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Unlimited Tasks</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Hidden Fees</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Hero Visual -->
+    <div class="hero-visual">
+      <div class="hero-card hero-card-1">
+        <div class="card-header">
+          <span class="card-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Today
+          </span>
+          <span class="status-badge status-active">Active</span>
+        </div>
+        <h3>Finish landing page</h3>
+        <p>Complete hero section animations</p>
+      </div>
+      
+      <div class="hero-card hero-card-2">
+        <div class="card-header">
+          <span class="card-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Completed
+          </span>
+          <span class="status-badge status-done">Done</span>
+        </div>
+        <h3>API Integration</h3>
+        <p>Connect backend services</p>
+      </div>
+      
+      <div class="hero-card hero-card-3">
+        <div class="progress-ring-container">
+          <svg class="progress-ring" width="80" height="80">
+            <circle class="progress-ring-bg" cx="40" cy="40" r="35"/>
+            <circle class="progress-ring-fill" cx="40" cy="40" r="35" stroke-dasharray="220" stroke-dashoffset="44"/>
+          </svg>
+          <span class="progress-text">80%</span>
+        </div>
+        <p class="progress-label">Sprint Progress</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Free Section -->
+  <section class="trusted-by">
+    <div class="section-container">
+      <p class="trusted-label">Why is Layer completely free?</p>
+      <div class="why-free-text">
+        <p>We believe productivity tools should be accessible to everyone. Layer is built with passion and designed to help individuals and teams achieve their goals — without financial barriers. As we grow together, we'll continue adding features based on your feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Features</span>
+        <h2>Powerful features for<br><span class="gradient-text">modern teams</span></h2>
+        <p>Everything you need to manage projects effectively and boost your team's productivity</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card feature-large">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3>Kanban Boards</h3>
+          <p>Visualize your workflow with customizable boards. Drag, drop, and organize tasks with ease. Create unlimited boards and columns tailored to your workflow.</p>
+          <div class="feature-preview kanban-preview">
+            <div class="kanban-column">
+              <div class="kanban-header">To Do</div>
+              <div class="kanban-card-mini"></div>
+              <div class="kanban-card-mini"></div>
+            </div>
+            <div class="kanban-column">
+              <div class="kanban-header">In Progress</div>
+              <div class="kanban-card-mini active"></div>
+            </div>
+            <div class="kanban-column">
+              <div class="kanban-header">Done</div>
+              <div class="kanban-card-mini done"></div>
+              <div class="kanban-card-mini done"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Focus Mode</h3>
+          <p>Eliminate distractions with timed focus sessions and smart break reminders. Stay productive with Pomodoro-style intervals.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Team Collaboration</h3>
+          <p>Work together in real-time with shared boards, comments, and instant notifications across your entire team.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3>Advanced Analytics</h3>
+          <p>Track performance with detailed insights, burndown charts, velocity metrics, and comprehensive productivity reports.</p>
+        </div>
+        
+        <div class="feature-card feature-large">
+          <div class="feature-icon orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <path d="M2 2l7.586 7.586"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
+          <h3>Whiteboard</h3>
+          <p>Brainstorm ideas with infinite canvas, sticky notes, and collaborative drawing tools. Perfect for visual thinkers and creative sessions.</p>
+          <div class="feature-preview whiteboard-preview">
+            <div class="wb-shape wb-rect"></div>
+            <div class="wb-shape wb-circle"></div>
+            <div class="wb-line"></div>
+            <div class="wb-sticky">Ideas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Features List -->
+  <section class="additional-features">
+    <div class="section-container">
+      <div class="features-list-grid">
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Document Management</h4>
+            <p>Attach files, images, and documents to any task. Organize everything in one place.</p>
+          </div>
+        </div>
+        
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Smart Calendar</h4>
+            <p>Built-in calendar views to organize your schedule. Never miss a deadline again.</p>
+          </div>
+        </div>
+        
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Email Integration</h4>
+            <p>Create tasks from emails and receive notifications directly in your inbox.</p>
+          </div>
+        </div>
+        
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Enterprise Security</h4>
+            <p>SOC 2 compliant, end-to-end encryption, and role-based access controls.</p>
+          </div>
+        </div>
+        
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Automation Rules</h4>
+            <p>Automate repetitive tasks with powerful workflow rules and triggers.</p>
+          </div>
+        </div>
+        
+        <div class="feature-list-item">
+          <div class="feature-list-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Team Chat</h4>
+            <p>Built-in messaging with channels, direct messages, and threaded conversations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">How It Works</span>
+        <h2>Get started in<br><span class="gradient-text">three simple steps</span></h2>
+        <p>From sign up to productivity boost in minutes, not hours</p>
+      </div>
+      
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+          </div>
+          <h3>Create Your Workspace</h3>
+          <p>Sign up in seconds and invite your team. Set up your first project board with our intuitive onboarding wizard. Import existing tasks from Trello, Asana, or Jira.</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3>Organize Your Tasks</h3>
+          <p>Create tasks, set priorities, assign team members, and organize everything with custom labels and due dates. Build workflows that match how your team actually works.</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Achieve Your Goals</h3>
+          <p>Track progress, celebrate wins, and optimize your workflow with powerful analytics. Watch your team's productivity soar as you complete projects faster than ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section class="dashboard" id="dashboard">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Dashboard</span>
+        <h2>Your command center</h2>
+        <p>Everything you need, all in one powerful and intuitive interface</p>
+      </div>
+      
+      <div class="dashboard-window">
+        <div class="window-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="window-tabs">
+            <button class="tab active">Board</button>
+            <button class="tab">Timeline</button>
+            <button class="tab">Calendar</button>
+          </div>
+        </div>
+        
+        <div class="dashboard-content">
+          <div class="dashboard-sidebar">
+            <div class="sidebar-item active">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              Dashboard
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+              Projects
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Calendar
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              Settings
+            </div>
+          </div>
+          
+          <div class="dashboard-main">
+            <div class="kanban-board">
+              <div class="kanban-col">
+                <div class="kanban-col-header">
+                  <span>To Do</span>
+                  <span class="count">3</span>
+                </div>
+                <div class="task-card">
+                  <span class="task-tag design">Design</span>
+                  <h4>Update Design System</h4>
+                  <p>Refresh component library</p>
+                  <div class="task-meta">
+                    <span class="priority high">High</span>
+                    <div class="avatars">
+                      <div class="avatar">J</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-card">
+                  <span class="task-tag dev">Development</span>
+                  <h4>API Integration</h4>
+                  <p>Connect payment gateway</p>
+                  <div class="task-meta">
+                    <span class="priority medium">Medium</span>
+                    <div class="avatars">
+                      <div class="avatar">M</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kanban-col">
+                <div class="kanban-col-header">
+                  <span>In Progress</span>
+                  <span class="count">2</span>
+                </div>
+                <div class="task-card active">
+                  <span class="task-tag research">Research</span>
+                  <h4>User Testing</h4>
+                  <p>Conduct usability tests</p>
+                  <div class="task-meta">
+                    <span class="priority high">High</span>
+                    <div class="avatars">
+                      <div class="avatar purple">S</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kanban-col">
+                <div class="kanban-col-header">
+                  <span>Done</span>
+                  <span class="count">5</span>
+                </div>
+                <div class="task-card done">
+                  <span class="task-tag design">Design</span>
+                  <h4>Logo Redesign</h4>
+                  <p>New brand identity</p>
+                  <div class="task-meta">
+                    <div class="avatars">
+                      <div class="avatar green">A</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section class="statistics">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Everything Included</span>
+        <h2>No tiers. No limits.<br><span class="gradient-text">Just productivity.</span></h2>
+        <p>Every feature is available to everyone, completely free</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">∞</div>
+          <div class="stat-description">Unlimited Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">∞</div>
+          <div class="stat-description">Unlimited Tasks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">∞</div>
+          <div class="stat-description">Team Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$0</div>
+          <div class="stat-description">Forever Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Section -->
+  <section class="collaboration" id="collaboration">
+    <div class="section-container">
+      <div class="collab-grid">
+        <div class="collab-content">
+          <span class="section-badge">Collaboration</span>
+          <h2>Real-time<br><span class="gradient-text">collaboration</span></h2>
+          <p>Work together seamlessly with your team. See changes instantly, leave comments, and stay in sync across all devices. No more version conflicts or communication gaps.</p>
+          <ul class="collab-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Live cursor tracking
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Instant notifications
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Comment threads
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Activity timeline
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Presence indicators
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Version history
+            </li>
+          </ul>
+        </div>
+        <div class="collab-visual">
+          <div class="collab-card">
+            <div class="collab-avatars">
+              <div class="collab-avatar" style="--color: #5e6ad2;">AK</div>
+              <div class="collab-avatar" style="--color: #26b5ce;">JD</div>
+              <div class="collab-avatar" style="--color: #4cb782;">MR</div>
+              <span class="online-text">3 online now</span>
+            </div>
+            <div class="collab-typing">
+              <span class="typing-indicator"></span>
+              Zeyad is typing...
+            </div>
+            <div class="collab-comment">
+              <div class="comment-avatar">JD</div>
+              <div class="comment-content">
+                <span class="comment-name">Jamie Davis</span>
+                <p>Great progress on the dashboard! 🎉</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Early Adopters Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Join the Journey</span>
+        <h2>Be an<br><span class="gradient-text">early adopter</span></h2>
+        <p>Layer is brand new — and you can help shape its future</p>
+      </div>
+      
+      <div class="early-adopter-content">
+        <div class="testimonial-card featured">
+          <div class="featured-icon">🚀</div>
+          <h3>Help Us Grow</h3>
+          <p class="testimonial-text">Layer is a passion project built to make productivity accessible to everyone. As an early adopter, you'll get direct access to new features, priority support, and the opportunity to influence our roadmap. Your feedback matters — together, we'll build something amazing.</p>
+          <div class="early-benefits">
+            <div class="benefit-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Early access to new features</span>
+            </div>
+            <div class="benefit-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Direct feedback channel</span>
+            </div>
+            <div class="benefit-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Shape the product roadmap</span>
+            </div>
+            <div class="benefit-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Always free — forever</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme Showcase -->
+  <section class="themes" id="themes">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">Themes</span>
+        <h2>Make it yours</h2>
+        <p>Choose from beautiful themes that match your style and preference</p>
+      </div>
+      
+      <div class="theme-cards">
+        <div class="theme-card" data-theme="midnight">
+          <div class="theme-preview midnight">
+            <div class="theme-nav"></div>
+            <div class="theme-content">
+              <div class="theme-sidebar"></div>
+              <div class="theme-main">
+                <div class="theme-card-mini"></div>
+                <div class="theme-card-mini"></div>
+              </div>
+            </div>
+          </div>
+          <span>Midnight</span>
+        </div>
+        
+        <div class="theme-card active" data-theme="aurora">
+          <div class="theme-preview aurora">
+            <div class="theme-nav"></div>
+            <div class="theme-content">
+              <div class="theme-sidebar"></div>
+              <div class="theme-main">
+                <div class="theme-card-mini"></div>
+                <div class="theme-card-mini"></div>
+              </div>
+            </div>
+          </div>
+          <span>Aurora</span>
+        </div>
+        
+        <div class="theme-card" data-theme="ocean">
+          <div class="theme-preview ocean">
+            <div class="theme-nav"></div>
+            <div class="theme-content">
+              <div class="theme-sidebar"></div>
+              <div class="theme-main">
+                <div class="theme-card-mini"></div>
+                <div class="theme-card-mini"></div>
+              </div>
+            </div>
+          </div>
+          <span>Ocean</span>
+        </div>
+        
+        <div class="theme-card" data-theme="sunset">
+          <div class="theme-preview sunset">
+            <div class="theme-nav"></div>
+            <div class="theme-content">
+              <div class="theme-sidebar"></div>
+              <div class="theme-main">
+                <div class="theme-card-mini"></div>
+                <div class="theme-card-mini"></div>
+              </div>
+            </div>
+          </div>
+          <span>Sunset</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-badge">FAQ</span>
+        <h2>Frequently asked<br><span class="gradient-text">questions</span></h2>
+        <p>Everything you need to know about Layer</p>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is Layer really 100% free?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely! Layer is completely free with no hidden fees, no credit card required, and no premium tiers. All features are available to everyone. We believe productivity tools should be accessible to all.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Why is Layer free? What's the catch?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>There's no catch! Layer is a passion project built to help people be more productive. We're just getting started and want to build a community of users who love the product. As we grow, we may explore optional features, but the core will always remain free.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is my data secure?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Your data security is our priority. We use industry-standard encryption for data in transit and at rest. We never sell your data or use it for advertising purposes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How can I provide feedback or request features?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>We'd love to hear from you! As an early user, your feedback directly shapes our roadmap. You can reach out through our contact page or By Emailing the Developer Criptface@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I invite my team members?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can invite unlimited team members to collaborate on your projects. There are no restrictions on team size — Layer is built for teams of all sizes, from solo users to large groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="section-container">
+      <div class="cta-content">
+        <h2>Ready to transform your workflow?</h2>
+        <p>Join Layer today and experience productivity without limits. It's completely free — no strings attached.</p>
+        <div class="cta-buttons">
+          <a href="https://layer-tool.vercel.app/" class="btn btn-primary btn-lg">Get Started Free</a>
+          <button class="btn btn-secondary btn-lg" onclick="openVideoModal()">Watch Demo</button>
+        </div>
+        <p class="cta-note">No credit card required • No payment ever • Free forever</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16v16H4V4z" fill="url(#footer-logo-gradient)" opacity="0.2"/>
+            <path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z" fill="url(#footer-logo-gradient)"/>
+            <defs>
+              <linearGradient id="footer-logo-gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#5e6ad2"/>
+                <stop offset="1" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          Layer
+        </a>
+        <p>A new approach to task management. Built with passion, free for everyone.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">GitHub</a>
+        </div>
+        <span class="copyright">© 2026 Layer. All rights reserved.</span>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Community</a>
+          <a href="#">Feedback</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="modal-overlay" id="video-modal">
+    <div class="video-modal">
+      <button class="modal-close" onclick="closeVideoModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="video-container">
+        <video id="demo-video" controls>
+          <source src="images/Layer webapp 7_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
