@@ -14,7 +14,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Layer - Professional Task Management">
   
-  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'&gt;&lt;path d='M4 4h16v16H4V4z' fill='url(%23g)' opacity='0.2'/&gt;&lt;path d='M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z' fill='url(%23g)'/&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='4' y1='4' x2='20' y2='20' gradientUnits='userSpaceOnUse'&gt;&lt;stop stop-color='%235e6ad2'/&gt;&lt;stop offset='1' stop-color='%238b5cf6'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;/svg&gt;" type="image/svg+xml">  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,16 +29,7 @@
   <nav class="nav">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 4h16v16H4V4z" fill="url(#logo-gradient)" opacity="0.2"/>
-          <path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z" fill="url(#logo-gradient)"/>
-          <defs>
-            <linearGradient id="logo-gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#5e6ad2"/>
-              <stop offset="1" stop-color="#8b5cf6"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <img src="images/logo.png" alt="Layer Logo" width="28" height="28">
         Layer
       </a>
       <div class="nav-links" id="nav-links">
@@ -47,7 +39,7 @@
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-actions">
-        <a href="https://layer-tool.vercel.app/" class="btn btn-primary">Get Started (beta)</a>
+        <a href="https://layer-tool.vercel.app/" class="btn btn-primary">Get Started Free</a>
       </div>
       <button class="nav-mobile-toggle" id="mobile-toggle" onclick="toggleMobileMenu()">
         <span></span>
@@ -62,7 +54,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span>Now Live (beta) — 100% Free</span>
+        <span>Now Live — 100% Free</span>
       </div>
       <h1 class="hero-title">
         Task management,<br>
@@ -73,7 +65,7 @@
       </p>
       <div class="hero-buttons">
           <a href="https://layer-tool.vercel.app/" class="btn btn-primary btn-lg">
-            Get Started (beta)
+            Get Started Free
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -246,10 +238,113 @@
           <h3>Whiteboard</h3>
           <p>Brainstorm ideas with infinite canvas, sticky notes, and collaborative drawing tools. Perfect for visual thinkers and creative sessions.</p>
           <div class="feature-preview whiteboard-preview">
-            <div class="wb-shape wb-rect"></div>
-            <div class="wb-shape wb-circle"></div>
-            <div class="wb-line"></div>
-            <div class="wb-sticky">Ideas</div>
+            <!-- SVG Connectors -->
+            <svg class="wb-connectors" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet">
+              <!-- Main node to Info -->
+              <path d="M200 55 Q280 35 320 55" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <!-- Main node to Team -->
+              <path d="M200 55 Q380 60 450 75" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <!-- Main node to Degree -->
+              <path d="M160 75 Q180 140 240 160" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <!-- Drawer to Main -->
+              <path d="M80 90 Q110 60 140 50" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <!-- Degree to Code -->
+              <path d="M300 170 Q380 180 420 155" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <!-- Arrow marker -->
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                  <polygon points="0 0, 8 3, 0 6" fill="#f97316"/>
+                </marker>
+              </defs>
+            </svg>
+
+            <!-- Node: Main (Purple) -->
+            <div class="wb-node wb-node-main">
+              <div class="wb-node-header wb-header-purple">Web intro page</div>
+              <div class="wb-node-body">All the info in the main page</div>
+            </div>
+
+            <!-- Node: Info (Cyan) -->
+            <div class="wb-node wb-node-info">
+              <div class="wb-node-header wb-header-cyan">Info</div>
+              <div class="wb-node-body">Zeyad Maher, 24 years old, egyptian</div>
+            </div>
+
+            <!-- Node: Team (Cyan) -->
+            <div class="wb-node wb-node-team">
+              <div class="wb-node-header wb-header-cyan">Team</div>
+              <div class="wb-node-body">Zeyad</div>
+            </div>
+
+            <!-- Node: Degree (Cyan) -->
+            <div class="wb-node wb-node-degree">
+              <div class="wb-node-header wb-header-cyan">Degree</div>
+              <div class="wb-node-body">Computer Engineering</div>
+            </div>
+
+            <!-- Drawer/Sidebar -->
+            <div class="wb-drawer">
+              <div class="wb-drawer-header">
+                <span>About section</span>
+                <span class="wb-drawer-badge">DRAWER</span>
+              </div>
+              <div class="wb-drawer-item">Dev Info</div>
+              <div class="wb-drawer-item">Degree of Dev</div>
+              <div class="wb-drawer-item">Team</div>
+            </div>
+
+            <!-- Code Block -->
+            <div class="wb-code">
+              <div class="wb-code-header">
+                <span class="wb-code-num">1</span>
+                <span class="wb-code-lang">JAVASCRIPT</span>
+                <span class="wb-code-run">▷ Run</span>
+              </div>
+              <div class="wb-code-body">
+                <code>// Enter your code here<br>function example() {<br>  return "Hello";<br>}</code>
+              </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="wb-toolbar">
+              <div class="wb-tool active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87c.48 0 .72-.58.38-.92L6.35 2.86a.5.5 0 0 0-.85.35z"/>
+                </svg>
+              </div>
+              <div class="wb-tool">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="5" width="14" height="14" rx="1"/>
+                </svg>
+              </div>
+              <div class="wb-tool wb-tool-add">
+                <span>+ Add</span>
+              </div>
+              <div class="wb-tool">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+              <div class="wb-tool">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                </svg>
+              </div>
+              <div class="wb-tool">T</div>
+              <div class="wb-tool">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+              </div>
+              <div class="wb-tool">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -377,7 +472,7 @@
             </svg>
           </div>
           <h3>Organize Your Tasks</h3>
-          <p>Create tasks, set priorities, assign team members, and organize everything with custom labels and due dates. Build workflows that match how your team actually works.</p>
+          <p>Create boards, lists, and cards to visualize your workflow. Add due dates, labels, and assignees. Use focus mode for deep work sessions.</p>
         </div>
         
         <div class="step-card">
@@ -388,138 +483,308 @@
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3>Achieve Your Goals</h3>
-          <p>Track progress, celebrate wins, and optimize your workflow with powerful analytics. Watch your team's productivity soar as you complete projects faster than ever.</p>
+          <h3>Track & Accomplish</h3>
+          <p>Monitor progress with visual analytics. Celebrate completed tasks and continuously improve your productivity with actionable insights.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Dashboard Preview -->
+  <!-- Dashboard Preview Section -->
   <section class="dashboard" id="dashboard">
     <div class="section-container">
       <div class="section-header">
         <span class="section-badge">Dashboard</span>
-        <h2>Your command center</h2>
-        <p>Everything you need, all in one powerful and intuitive interface</p>
+        <h2>Everything you need,<br><span class="gradient-text">beautifully organized</span></h2>
+        <p>A modern interface designed for speed, clarity, and productivity</p>
       </div>
       
-      <div class="dashboard-window">
-        <div class="window-header">
-          <div class="window-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="window-tabs">
-            <button class="tab active">Board</button>
-            <button class="tab">Timeline</button>
-            <button class="tab">Calendar</button>
-          </div>
-        </div>
-        
-        <div class="dashboard-content">
-          <div class="dashboard-sidebar">
-            <div class="sidebar-item active">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="7" height="7"/>
-                <rect x="14" y="3" width="7" height="7"/>
-                <rect x="14" y="14" width="7" height="7"/>
-                <rect x="3" y="14" width="7" height="7"/>
-              </svg>
-              Dashboard
+      <div class="dashboard-window dashboard-full">
+        <!-- Full Dashboard Layout -->
+        <div class="dash-layout">
+          <!-- Left Sidebar -->
+          <aside class="dash-sidebar">
+            <div class="dash-logo">
+              <img src="images/logo.png" alt="Layer" width="20" height="20">
+              <span>Layer</span>
+              <small>WORKSPACE</small>
             </div>
-            <div class="sidebar-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
-              Projects
+            <button class="dash-create-btn">+ Create</button>
+            
+            <nav class="dash-nav">
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Dashboard
+              </a>
+              <a href="#" class="dash-nav-item active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                My issues
+              </a>
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                Backlog
+              </a>
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                Schedule
+              </a>
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                Workspace
+              </a>
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                Team
+              </a>
+              <a href="#" class="dash-nav-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M1 12h6m6 0h10M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/></svg>
+                Settings
+              </a>
+            </nav>
+
+            <div class="dash-spaces-label">SPACES</div>
+            <nav class="dash-nav dash-nav-spaces">
+              <a href="#" class="dash-nav-item"><span class="space-dot pink"></span>Smart Plant Box...</a>
+              <a href="#" class="dash-nav-item"><span class="space-dot purple"></span>Data Networks</a>
+              <a href="#" class="dash-nav-item"><span class="space-dot orange"></span>Work</a>
+            </nav>
+
+            <div class="dash-spaces-label">FAVORITES</div>
+            <nav class="dash-nav">
+              <a href="#" class="dash-nav-item"><span class="fav-star">★</span>Data network...</a>
+              <a href="#" class="dash-nav-item"><span class="fav-star">★</span>IT project m...</a>
+              <a href="#" class="dash-nav-item"><span class="fav-star">★</span>Project Part...</a>
+            </nav>
+
+            <div class="dash-sidebar-footer">
+              <button class="focus-mode-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Focus Mode
+              </button>
+              <div class="dash-user">
+                <div class="dash-user-avatar">ZE</div>
+                <span>zeyad</span>
+              </div>
             </div>
-            <div class="sidebar-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              Calendar
-            </div>
-            <div class="sidebar-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-              Settings
-            </div>
-          </div>
-          
-          <div class="dashboard-main">
-            <div class="kanban-board">
-              <div class="kanban-col">
-                <div class="kanban-col-header">
-                  <span>To Do</span>
-                  <span class="count">3</span>
-                </div>
-                <div class="task-card">
-                  <span class="task-tag design">Design</span>
-                  <h4>Update Design System</h4>
-                  <p>Refresh component library</p>
-                  <div class="task-meta">
-                    <span class="priority high">High</span>
-                    <div class="avatars">
-                      <div class="avatar">J</div>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="dash-main">
+            <header class="dash-header">
+              <span class="dash-breadcrumb">Inbox</span>
+              <div class="dash-search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Search...
+              </div>
+            </header>
+
+            <div class="dash-content">
+              <div class="dash-title-row">
+                <h1>Dashboard</h1>
+                <button class="edit-layout-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  Edit Layout
+                </button>
+              </div>
+
+              <!-- Widgets Row -->
+              <div class="dash-widgets">
+                <div class="dash-widget widget-overview">
+                  <div class="widget-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Overview
+                  </div>
+                  <div class="overview-stats">
+                    <div class="overview-stat">
+                      <span class="stat-num">2</span>
+                      <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="overview-stat">
+                      <span class="stat-num">1</span>
+                      <span class="stat-label">Open Issues</span>
+                    </div>
+                    <div class="overview-stat">
+                      <span class="stat-num">5</span>
+                      <span class="stat-label">Documents</span>
                     </div>
                   </div>
                 </div>
-                <div class="task-card">
-                  <span class="task-tag dev">Development</span>
-                  <h4>API Integration</h4>
-                  <p>Connect payment gateway</p>
-                  <div class="task-meta">
-                    <span class="priority medium">Medium</span>
-                    <div class="avatars">
-                      <div class="avatar">M</div>
+
+                <div class="dash-widget widget-completion">
+                  <div class="widget-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Task Completion
+                  </div>
+                  <div class="completion-content">
+                    <span class="completion-percent">47%</span>
+                    <div class="completion-bar">
+                      <div class="completion-fill"></div>
+                    </div>
+                    <div class="completion-meta">
+                      <span class="completed">7 completed</span>
+                      <span class="remaining">8 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dash-widget widget-actions">
+                  <div class="widget-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Quick Actions
+                  </div>
+                  <div class="quick-actions-grid">
+                    <button class="quick-action">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                      New Doc
+                    </button>
+                    <button class="quick-action">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                      New Issue
+                    </button>
+                    <button class="quick-action">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                      Projects
+                    </button>
+                    <button class="quick-action">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                      Calendar
+                    </button>
+                  </div>
+                </div>
+
+                <div class="dash-widget widget-activity">
+                  <div class="widget-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Weekly Activity
+                  </div>
+                  <div class="activity-chart">
+                    <div class="chart-bars">
+                      <div class="chart-bar" style="height: 20%"></div>
+                      <div class="chart-bar" style="height: 40%"></div>
+                      <div class="chart-bar" style="height: 30%"></div>
+                      <div class="chart-bar" style="height: 60%"></div>
+                      <div class="chart-bar" style="height: 45%"></div>
+                      <div class="chart-bar" style="height: 25%"></div>
+                      <div class="chart-bar" style="height: 10%"></div>
+                    </div>
+                    <div class="chart-labels">
+                      <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dash-widget widget-streak">
+                  <div class="widget-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Your Streak
+                  </div>
+                  <div class="streak-content">
+                    <span class="streak-icon">🔥</span>
+                    <span class="streak-days">0 days</span>
+                    <span class="streak-msg">Keep it up!</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Today's Focus -->
+              <div class="dash-focus">
+                <div class="focus-card">
+                  <div class="focus-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Today's Focus
+                  </div>
+                  <p class="focus-empty">No tasks for today. Add some from the Schedule!</p>
+                </div>
+              </div>
+
+              <!-- Your Spaces -->
+              <div class="dash-spaces">
+                <h3>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                  Your Spaces
+                </h3>
+                <div class="spaces-grid">
+                  <div class="space-card space-pink">
+                    <div class="space-card-header">
+                      <span class="space-icon">&lt;/&gt;</span>
+                      <div>
+                        <h4>Smart Plant Box Senior project</h4>
+                      </div>
+                    </div>
+                    <p class="space-desc">Learning the ESP32s coding language</p>
+                    <div class="space-meta">
+                      <span>📄 3 docs</span>
+                      <span>📋 1 sheets</span>
+                    </div>
+                    <div class="space-date">📅 Jan 30, 2026</div>
+                  </div>
+
+                  <div class="space-card space-purple">
+                    <div class="space-card-header">
+                      <span class="space-icon">📊</span>
+                      <div>
+                        <h4>Data Networks</h4>
+                      </div>
+                    </div>
+                    <p class="space-desc">Midterm 2</p>
+                    <div class="space-meta">
+                      <span>📄 0 docs</span>
+                      <span>📋 0 sheets</span>
+                    </div>
+                    <div class="space-date">📅 Jan 29, 2026</div>
+                  </div>
+
+                  <div class="space-card space-orange">
+                    <div class="space-card-header">
+                      <span class="space-icon">💼</span>
+                      <div>
+                        <h4>Work</h4>
+                      </div>
+                    </div>
+                    <p class="space-desc">personal work project</p>
+                    <div class="space-meta">
+                      <span>📄 0 docs</span>
+                      <span>📋 0 sheets</span>
+                    </div>
+                    <div class="space-date">📅 Jan 31, 2026</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Activity -->
+              <div class="dash-recent">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                  <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                      <span class="activity-text">Created project "Layer Website Introduction"</span>
+                      <span class="activity-date">Jan 9, 2026</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                      <span class="activity-text">Created project "SPB"</span>
+                      <span class="activity-date">Jan 9, 2026</span>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <div class="kanban-col">
-                <div class="kanban-col-header">
-                  <span>In Progress</span>
-                  <span class="count">2</span>
-                </div>
-                <div class="task-card active">
-                  <span class="task-tag research">Research</span>
-                  <h4>User Testing</h4>
-                  <p>Conduct usability tests</p>
-                  <div class="task-meta">
-                    <span class="priority high">High</span>
-                    <div class="avatars">
-                      <div class="avatar purple">S</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="kanban-col">
-                <div class="kanban-col-header">
-                  <span>Done</span>
-                  <span class="count">5</span>
-                </div>
-                <div class="task-card done">
-                  <span class="task-tag design">Design</span>
-                  <h4>Logo Redesign</h4>
-                  <p>New brand identity</p>
-                  <div class="task-meta">
-                    <div class="avatars">
-                      <div class="avatar green">A</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+          </main>
+
+          <!-- Right Sidebar - Summary -->
+          <aside class="dash-summary">
+            <h4>SUMMARY OF TODAY</h4>
+            <div class="summary-content">
+              <p>Good evening! Here's your daily overview:</p>
+              <p><strong>[Tasks]</strong> Today's Tasks:<br>No tasks scheduled for today. Great time to plan ahead or tackle pending items.</p>
+              <p><strong>[Calendar]</strong> Upcoming This Week:<br>No upcoming tasks scheduled. Consider planning your week.</p>
+              <p><strong>[Projects]</strong> Active Projects:<br>You have 2 active projects to manage.</p>
+              <p><strong>[Tip]</strong> Focus Insight:<br>A quiet week ahead. Us</p>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -820,7 +1085,7 @@
         <h2>Ready to transform your workflow?</h2>
         <p>Join Layer today and experience productivity without limits. It's completely free — no strings attached.</p>
         <div class="cta-buttons">
-          <a href="https://layer-tool.vercel.app/" class="btn btn-primary btn-lg">Get Started (beta)</a>
+          <a href="https://layer-tool.vercel.app/" class="btn btn-primary btn-lg">Get Started Free</a>
           <button class="btn btn-secondary btn-lg" onclick="openVideoModal()">Watch Demo</button>
         </div>
         <p class="cta-note">No credit card required • No payment ever • Free forever</p>
@@ -833,16 +1098,7 @@
     <div class="footer-container">
       <div class="footer-brand">
         <a href="#" class="footer-logo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16v16H4V4z" fill="url(#footer-logo-gradient)" opacity="0.2"/>
-            <path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z" fill="url(#footer-logo-gradient)"/>
-            <defs>
-              <linearGradient id="footer-logo-gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#5e6ad2"/>
-                <stop offset="1" stop-color="#8b5cf6"/>
-              </linearGradient>
-            </defs>
-          </svg>
+          <img src="images/logo.png" alt="Layer Logo" width="24" height="24">
           Layer
         </a>
         <p>A new approach to task management. Built with passion, free for everyone.</p>
@@ -904,6 +1160,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
